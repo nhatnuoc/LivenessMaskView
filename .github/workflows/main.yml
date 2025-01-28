@@ -17,6 +17,8 @@ jobs:
       uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: latest-stable
+    - name: Install iOS Simulator
+      run: xcodebuild -downloadAllPlatforms
 
     - name: Build NDA LivenessMaskView
       run: |
