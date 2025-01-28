@@ -1,0 +1,47 @@
+name: Build and Publish Subspecs
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-publish:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v2
+
+    - name: Build NDA LivenessMaskView
+      run: |
+        xcodebuild archive \
+        -scheme NDA \
+        -configuration Release \
+        -destination 'generic/platform=iOS' \
+        -archivePath './build/NDA/LivenessMaskView.framework-iphoneos.xcarchive' \
+        SKIP_INSTALL=NO \
+        BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
+        
+        xcodebuild archive \
+        -scheme NDA \
+        -configuration Release \
+        -destination 'generic/platform=iOS Simulator' \
+        -archivePath './build/NDA/LivenessMaskView.framework-iphonesimulator.xcarchive' \
+        SKIP_INSTALL=NO \
+        BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
+        
+        xcodebuild -create-xcframework \
+        -framework './build/NDA/LivenessMaskView.framework-iphoneos.xcarchive/Products/Library/Frameworks/LivenessMaskView.framework' \
+        -framework './build/NDA/LivenessMaskView.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/LivenessMaskView.framework' \
+        -output 'LivenessMaskView_NDA.xcframework'
+
+    - name: Publish NDA LivenessMaskView to GitHub Packages
+      run: |
+        zip -r LivenessMaskView_NDA.xcframework.zip LivenessMaskView_NDA.xcframework
+        gh release create ${{ github.ref_name }} LivenessMaskView_NDA.xcframework.zip \
+          --title "LivenessMaskView_NDA Release ${{ github.ref_name }}" \
+          --notes "Build for LivenessMaskView_NDA"
