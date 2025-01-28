@@ -41,8 +41,8 @@ jobs:
         BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
         
         xcodebuild -create-xcframework \
-        -framework './build/NDA/LivenessMaskView.framework-iphoneos.xcarchive/Products/Library/Frameworks/LivenessMaskView.framework' \
-        -framework './build/NDA/LivenessMaskView.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/LivenessMaskView.framework' \
+        -framework './build/NDA/LivenessMaskView.framework-iphoneos.xcarchive/Products/Library/Frameworks/NDA.framework' \
+        -framework './build/NDA/LivenessMaskView.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/NDA.framework' \
         -output 'LivenessMaskView_NDA.xcframework'
 
     - name: Publish NDA LivenessMaskView to GitHub Packages
