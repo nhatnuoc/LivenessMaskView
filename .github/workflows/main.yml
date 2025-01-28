@@ -25,6 +25,7 @@ jobs:
         -configuration Release \
         -destination 'generic/platform=iOS' \
         -archivePath './build/NDA/LivenessMaskView.framework-iphoneos.xcarchive' \
+        clean build -verbose \
         SKIP_INSTALL=NO \
         BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
         
@@ -33,6 +34,7 @@ jobs:
         -configuration Release \
         -destination 'generic/platform=iOS Simulator' \
         -archivePath './build/NDA/LivenessMaskView.framework-iphonesimulator.xcarchive' \
+        clean build -verbose \
         SKIP_INSTALL=NO \
         BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
         
