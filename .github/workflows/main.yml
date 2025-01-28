@@ -18,7 +18,7 @@ jobs:
       with:
         xcode-version: latest-stable
     - name: Install iOS Simulator
-      run: xcodebuild -downloadAllPlatforms
+      run: xcodebuild -downloadAllPlatforms | grep iOS
 
     - name: Build NDA LivenessMaskView
       run: |
