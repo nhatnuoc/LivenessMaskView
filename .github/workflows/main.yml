@@ -1,9 +1,9 @@
-name: Build and Publish Subspecs
+name: Build and Publish NDA Style of LivenessMaskView
 
 on:
   push:
     tags:
-      - "v*"
+      - "nda*"
 
 jobs:
   build-and-publish:
