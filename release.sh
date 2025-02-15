@@ -3,12 +3,12 @@
 # Define paths
 FRAMEWORKNAME='LivenessMask' # Use this as dynamic name..
 
-XCFRAMEWORK_DIR='./build/LivenessMaskView.xcframework'
+XCFRAMEWORK_DIR='./build/LivenessMask.xcframework'
 ZIP_FOLDER='./build'
 ZIP_PATH='LivenessMask.zip'
 
 GIT_REPO_PATH='../liveness-mask-view-pod' # Update this to your Git repository path
-PODSPEC_FILE="$GIT_REPO_PATH/LivenessMaskView.podspec"
+PODSPEC_FILE="$GIT_REPO_PATH/LivenessMask.podspec"
 GITHUB_REPO='nhatnuoc/liveness-mask-view-pod' # Update with your actual GitHub repo name
 
 # Step 1: Remove previous build
@@ -20,7 +20,7 @@ xcodebuild archive \
 -scheme LivenessMask \
 -configuration Release \
 -destination 'generic/platform=iOS' \
--archivePath './build/LivenessMaskView.framework-iphoneos.xcarchive' \
+-archivePath './build/LivenessMask.framework-iphoneos.xcarchive' \
 SKIP_INSTALL=NO \
 BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
 
@@ -30,21 +30,21 @@ xcodebuild archive \
 -scheme LivenessMask \
 -configuration Release \
 -destination 'generic/platform=iOS Simulator' \
--archivePath './build/LivenessMaskView.framework-iphonesimulator.xcarchive' \
+-archivePath './build/LivenessMask.framework-iphonesimulator.xcarchive' \
 SKIP_INSTALL=NO \
 BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
 
 # Step 4: Create the XCFramework
 xcodebuild -create-xcframework \
--framework './build/LivenessMaskView.framework-iphoneos.xcarchive/Products/Library/Frameworks/LivenessMask.framework' \
--framework './build/LivenessMaskView.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/LivenessMask.framework' \
+-framework './build/LivenessMask.framework-iphoneos.xcarchive/Products/Library/Frameworks/LivenessMask.framework' \
+-framework './build/LivenessMask.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/LivenessMask.framework' \
 -output "$XCFRAMEWORK_DIR"
 
-find . -name "*.swiftinterface" -exec sed -i -e 's/LivenessMaskView\.//g' {} \;
+find . -name "*.swiftinterface" -exec sed -i -e 's/LivenessMask\.//g' {} \;
 
 # Step 6: Clean up the build archives
-rm -rf './build/LivenessMaskView.framework-iphonesimulator.xcarchive'
-rm -rf './build/LivenessMaskView.framework-iphoneos.xcarchive'
+rm -rf './build/LivenessMask.framework-iphonesimulator.xcarchive'
+rm -rf './build/LivenessMask.framework-iphoneos.xcarchive'
 
 # Step 5: Zip the XCFramework
 # Navigate to the folder containing LivenessMaskView
@@ -58,7 +58,7 @@ cd - || exit 1
 
 echo "Zip framework SUCCEEDED"
 cp -a -f "./build" "$GIT_REPO_PATH"
-cp -a -f "./build" "../liveness-mask-view-pod"
+cp -a -f "./build/LivenessMask.xcframework" "../liveness-mask-view-pod/NDA"
 rm -rf './build'
 
 # Step 7: Move to the Git repository folder
