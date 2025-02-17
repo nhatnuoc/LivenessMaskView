@@ -23,10 +23,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-Cf-D89">
-                                <rect key="frame" x="0.0" y="59" width="393" height="62.333333333333343"/>
+                                <rect key="frame" x="0.0" y="58.999999999999993" width="393" height="86.333333333333314"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeW-cD-aTx">
-                                        <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="62.333333333333336"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeW-cD-aTx">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="86.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="message"/>
                                         <connections>
@@ -34,27 +34,35 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfS-sv-hdL">
-                                        <rect key="frame" x="106.33333333333334" y="0.0" width="98.333333333333343" height="62.333333333333336"/>
+                                        <rect key="frame" x="79" y="0.0" width="73.333333333333314" height="86.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="detected"/>
                                         <connections>
                                             <action selector="onPressDetected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Seb-DZ-ghH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJc-is-YuE">
-                                        <rect key="frame" x="212.66666666666663" y="0.0" width="98" height="62.333333333333336"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJc-is-YuE">
+                                        <rect key="frame" x="160.33333333333334" y="0.0" width="78.666666666666657" height="86.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="processing"/>
                                         <connections>
                                             <action selector="onPressProcessing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wgk-oL-ELJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjv-fd-B64">
-                                        <rect key="frame" x="318.66666666666669" y="0.0" width="74.333333333333314" height="62.333333333333336"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjv-fd-B64">
+                                        <rect key="frame" x="246.99999999999997" y="0.0" width="78.666666666666657" height="86.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="error"/>
                                         <connections>
                                             <action selector="onPressError:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ET8-tq-wCg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI0-h7-oWR">
+                                        <rect key="frame" x="333.66666666666669" y="0.0" width="59.333333333333314" height="86.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="success"/>
+                                        <connections>
+                                            <action selector="onPressSuccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcc-3c-Wt2"/>
                                         </connections>
                                     </button>
                                 </subviews>

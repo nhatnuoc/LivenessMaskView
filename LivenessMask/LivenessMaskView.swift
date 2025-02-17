@@ -34,7 +34,7 @@ public class LivenessMaskView: UIView {
             if self.animView.superview == nil {
                 self.superview?.addSubview(self.animView)
             }
-            self.animView.frame = self.convert(self.previewFrame.insetBy(dx: -30, dy: -25), to: self.superview)
+            self.animView.frame = self.convert(self.previewFrame.inset(by: .init(top: -25, left: -34, bottom: -25, right: -32)), to: self.superview)
             if self.detectedView.superview == nil {
                 self.superview?.insertSubview(self.detectedView, belowSubview: self)
             }

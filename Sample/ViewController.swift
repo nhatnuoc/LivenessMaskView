@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBAction func onPressError(_ sender: Any) {
         self.livenessView.showError("error")
     }
+    @IBAction func onPressSuccess(_ sender: Any) {
+        self.livenessView.showSuccess("success")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
