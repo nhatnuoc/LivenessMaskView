@@ -1,16 +1,16 @@
 PODS:
-  - lottie-ios (4.5.1)
+  - lottie-ios (4.4.1)
 
 DEPENDENCIES:
-  - lottie-ios (~> 4.5.1)
+  - lottie-ios (= 4.4.1)
 
 SPEC REPOS:
   trunk:
     - lottie-ios
 
 SPEC CHECKSUMS:
-  lottie-ios: 248b380fa1b97d18e792c37d90da7ab2aa0d6562
+  lottie-ios: e047b1d2e6239b787cc5e9755b988869cf190494
 
-PODFILE CHECKSUM: db4062c5c46a30f2534616e5e7db3cd0ffa97b8e
+PODFILE CHECKSUM: ece4ca1358ddb1975394f2c1dd8105a506e6aee1
 
 COCOAPODS: 1.16.2

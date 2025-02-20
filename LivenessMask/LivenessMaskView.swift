@@ -280,9 +280,11 @@ extension LivenessMaskView {
     
     public func showSuccess(_ message: String) {
         self.resetOvalBorderAnim()
+        self.ovalBorderLayer?.strokeColor = self.normalOvalBorderColor.cgColor
         self.instructionText = ""
         self.animView.isHidden = false
         self.detectedView.isHidden = false
+        self.detectedView.stop()
         self.animView.loopMode = .playOnce
         let anim = LottieAnimation.named("anim-success", bundle: Bundle(for: LivenessMaskView.self))
         self.animView.animation = anim

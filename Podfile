@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '13.0'
+#platform :ios, '13.0'
 
 target 'LivenessMask' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,7 +7,7 @@ target 'LivenessMask' do
   inherit! :search_paths
 
   # Pods for LivenessMask
-  pod 'lottie-ios', '~> 4.5.1'
+  pod 'lottie-ios', '4.4.1'
 
   target 'LivenessMaskTests' do
     # Pods for testing
@@ -43,7 +43,7 @@ post_install do |installer|
 #    end
     target.build_configurations.each do |config|
       #config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
     end
   end
 end
